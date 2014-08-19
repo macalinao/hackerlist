@@ -6,10 +6,13 @@
       <img ng-src="{{hacker.basics.picture}}" class="img-responsive img-rounded" />
       <h2>
         {{hacker.basics.name}}
-        <small>{{hacker.basics.handle}}</small>
+        <small>{{hacker.basics.label}}</small>
       </h2>
 
-      <i class="fa fa-users"></i> Work
+      <ul class="list-unstyled">
+        <li><i class="fa fa-users"></i> Work</li>
+        <li><i class="fa fa-link"></i> {{hacker.basics.website}}</li>
+      </ul>
     </div>
   </div>
 </div>

@@ -12,11 +12,11 @@ function resolveGithub(hacker, cb) {
     user: hacker
   }, function(err, profile) {
     if (!profile) {
-      cb(err, null);
+      return cb(err, null);
     }
 
     if (!profile.blog) {
-      cb(err, null);
+      return cb(err, null);
     }
 
     request.get(profile.blog + '/hacker.json').end(function(err, res) {
