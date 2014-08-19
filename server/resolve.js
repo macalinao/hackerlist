@@ -20,7 +20,14 @@ function resolveGithub(hacker, cb) {
     }
 
     request.get(profile.blog + '/hacker.json').end(function(err, res) {
-      cb(err, res.body || {});
+      var hacker = res.body;
+      if (!hacker) {
+        return cb(err, null);
+      }
+
+      hacker.basics.handle = hacker.basics.handle || profile.login;
+      hacker.basics.picture = hacker.basics.picture || profile.avatar_url;
+      cb(err, hacker);
     });
   });
 }
