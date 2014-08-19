@@ -4,6 +4,15 @@
   <div class="container">
     <h1>HackerList</h1>
     <p class="lead">A decentralized hacker directory</p>
+    <div class="col-md-6 col-md-offset-3">
+      <form class="form-inline" ng-submit="submit()">
+        <div class="form-group">
+          <label class="sr-only" for="hackerSearch">Search Hackers</label>
+          <input type="text" ng-model="hackerSearch" class="form-control" placeholder="Hacker handle" />
+        </div>
+        <button class="btn btn-success" ng-click="submit()">Go!</button>
+    </div>
+    </form>
   </div>
 </header>
 
